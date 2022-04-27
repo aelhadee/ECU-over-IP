@@ -44,63 +44,63 @@ start_time_data_auth = 0
 dt_data_received = []
 t_data_auth = []
 user_log_name = "AES_OCB_RX_AX_router_5GHz"
-#
-# # CANFD BUS - 8 Mbits/s
-# bus_FD = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', fd=True, f_clock=80000000, nom_brp=10, nom_tseg1=5,
-#                            nom_tseg2=2, nom_sjw=1, data_brp=4, data_tseg1=7, data_tseg2=2, data_sjw=1)
-# # Define CAN FD Messages:
-# msg1 = Message(arbitration_id=0xE0, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
-#                is_extended_id=False, is_fd=True, data=[0] * 64)  # start with all 0s, 64 bytes CAN payload
-# msg1_tx = bus_FD.send_periodic(msg1, 0.05)  # transmit every 50 milliseconds
-# # -----------------------------------------------------------------------------------
-# #  FD Message 2
-# msg2 = Message(arbitration_id=0xC1, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
-#                is_extended_id=False, is_fd=True, data=[0] * 64)
-# msg2_tx = bus_FD.send_periodic(msg2, 0.05)
-# # -----------------------------------------------------------------------------------
-# #   FD MESSAGE 3
-# msg3 = Message(arbitration_id=0xF2, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
-#                is_extended_id=False, is_fd=True, data=[0] * 64)
-# msg3_tx = bus_FD.send_periodic(msg3, 0.05)
-# # -----------------------------------------------------------------------------------
-# msg4 = Message(arbitration_id=0xA0, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
-#                is_extended_id=False, is_fd=True, data=[0] * 64)
-# msg4_tx = bus_FD.send_periodic(msg4, 0.1)  # 100 ms
-# # -----------------------------------------------------------------------------------
-# msg5 = Message(arbitration_id=0xD5, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
-#                is_extended_id=False, is_fd=True, data=[0] * 64)
-# msg5_tx = bus_FD.send_periodic(msg5, 0.3)  # 300 ms
-# # ====================================================================================
-# # CAN BUS
-# bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS2', fd=False, bitrate=500000)
-# # MESSAGE 6 - CAN MESSAGE 1 (500K)
-# msg6 = Message(arbitration_id=0xC5, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
-#                is_extended_id=False, is_fd=False, data=[0] * 8)
-# msg6_tx = bus.send_periodic(msg6, 0.05)  # 50 ms
-# # -----------------------------------------------------------------------------------
-#
-# msg7 = Message(arbitration_id=0xF0, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
-#                is_extended_id=False, is_fd=False, data=[0] * 8)
-# msg7_tx = bus.send_periodic(msg7, 0.05)  # 50 ms
-# # -----------------------------------------------------------------------------------
-#
-# msg8 = Message(arbitration_id=0xF1, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
-#                is_extended_id=False, is_fd=False, data=[0] * 8)
-# msg8_tx = bus.send_periodic(msg8, 0.05)  # 50 ms
-# # -----------------------------------------------------------------------------------
-#
-# msg9 = Message(arbitration_id=0xF5, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
-#                is_extended_id=False, is_fd=False, data=[0] * 8)
-# msg9_tx = bus.send_periodic(msg9, 0.02)  # 20 ms
-# # -----------------------------------------------------------------------------------
-# msg10 = Message(arbitration_id=0xF10, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
-#                 is_extended_id=False, is_fd=False, data=[0] * 8)
-# msg10_tx = bus.send_periodic(msg10, 0.03)  # 30 ms
 
-# # # video file info
-# vid_name = "video" + str(time.time_ns()) + ".mp4"
-# fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-# vid_out = cv2.VideoWriter(vid_name, fourcc, 20, (640, 480))
+# CANFD BUS - 8 Mbits/s
+bus_FD = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS1', fd=True, f_clock=80000000, nom_brp=10, nom_tseg1=5,
+                           nom_tseg2=2, nom_sjw=1, data_brp=4, data_tseg1=7, data_tseg2=2, data_sjw=1)
+# Define CAN FD Messages:
+msg1 = Message(arbitration_id=0xE0, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
+               is_extended_id=False, is_fd=True, data=[0] * 64)  # start with all 0s, 64 bytes CAN payload
+msg1_tx = bus_FD.send_periodic(msg1, 0.05)  # transmit every 50 milliseconds
+# -----------------------------------------------------------------------------------
+#  FD Message 2
+msg2 = Message(arbitration_id=0xC1, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
+               is_extended_id=False, is_fd=True, data=[0] * 64)
+msg2_tx = bus_FD.send_periodic(msg2, 0.05)
+# -----------------------------------------------------------------------------------
+#   FD MESSAGE 3
+msg3 = Message(arbitration_id=0xF2, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
+               is_extended_id=False, is_fd=True, data=[0] * 64)
+msg3_tx = bus_FD.send_periodic(msg3, 0.05)
+# -----------------------------------------------------------------------------------
+msg4 = Message(arbitration_id=0xA0, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
+               is_extended_id=False, is_fd=True, data=[0] * 64)
+msg4_tx = bus_FD.send_periodic(msg4, 0.1)  # 100 ms
+# -----------------------------------------------------------------------------------
+msg5 = Message(arbitration_id=0xD5, bitrate_switch=False, channel=PCAN_USBBUS1, dlc=64,
+               is_extended_id=False, is_fd=True, data=[0] * 64)
+msg5_tx = bus_FD.send_periodic(msg5, 0.3)  # 300 ms
+# ====================================================================================
+# CAN BUS
+bus = can.interface.Bus(bustype='pcan', channel='PCAN_USBBUS2', fd=False, bitrate=500000)
+# MESSAGE 6 - CAN MESSAGE 1 (500K)
+msg6 = Message(arbitration_id=0xC5, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
+               is_extended_id=False, is_fd=False, data=[0] * 8)
+msg6_tx = bus.send_periodic(msg6, 0.05)  # 50 ms
+# -----------------------------------------------------------------------------------
+
+msg7 = Message(arbitration_id=0xF0, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
+               is_extended_id=False, is_fd=False, data=[0] * 8)
+msg7_tx = bus.send_periodic(msg7, 0.05)  # 50 ms
+# -----------------------------------------------------------------------------------
+
+msg8 = Message(arbitration_id=0xF1, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
+               is_extended_id=False, is_fd=False, data=[0] * 8)
+msg8_tx = bus.send_periodic(msg8, 0.05)  # 50 ms
+# -----------------------------------------------------------------------------------
+
+msg9 = Message(arbitration_id=0xF5, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
+               is_extended_id=False, is_fd=False, data=[0] * 8)
+msg9_tx = bus.send_periodic(msg9, 0.02)  # 20 ms
+# -----------------------------------------------------------------------------------
+msg10 = Message(arbitration_id=0xF10, bitrate_switch=False, channel=PCAN_USBBUS2, dlc=8,
+                is_extended_id=False, is_fd=False, data=[0] * 8)
+msg10_tx = bus.send_periodic(msg10, 0.03)  # 30 ms
+
+# # video file info
+vid_name = "video" + str(time.time_ns()) + ".mp4"
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+vid_out = cv2.VideoWriter(vid_name, fourcc, 20, (640, 480))
 while True:
     # len of the frame image only
     while len(data) < img_size:
@@ -243,56 +243,56 @@ while True:
     msg9_data = []
     msg10_data = []
 
-    #   Get the new CAN bytes that just arrived
-    # CAN FD MSG 1
-    # for e in range(3, 67):
-    #     msg1_data.append((CAN_bytes[e]))
-    # msg1.data = msg1_data
-    #
-    # # CAN FD MSG 2
-    # for e in range(72, 136):
-    #     msg2_data.append((CAN_bytes[e]))
-    # msg2.data = msg2_data
-    #
-    # # CAN FD MSG 3
-    # for e in range(141, 205):
-    #     msg3_data.append((CAN_bytes[e]))
-    # msg3.data = msg3_data
-    #
-    # # CAN FD MSG 4
-    # for e in range(210, 274):
-    #     msg4_data.append((CAN_bytes[e]))
-    # msg4.data = msg4_data
-    #
-    # # CAN FD MSG 5
-    # for e in range(279, 343):
-    #     msg5_data.append((CAN_bytes[e]))
-    # msg5.data = msg5_data
-    #
-    # # CAN MSG 1 - MESSAGE 6
-    # for e in range(346, 354):
-    #     msg6_data.append((CAN_bytes[e]))
-    # msg6.data = msg6_data
-    #
-    # # CAN MSG 2 - MESSAGE 7
-    # for e in range(357, 365):
-    #     msg7_data.append((CAN_bytes[e]))
-    # msg7.data = msg7_data
-    #
-    # # CAN MSG 3 - MESSAGE 8
-    # for e in range(368, 376):
-    #     msg8_data.append((CAN_bytes[e]))
-    # msg8.data = msg8_data
-    #
-    # # CAN MSG 4 - MESSAGE 9
-    # for e in range(379, 387):
-    #     msg9_data.append((CAN_bytes[e]))
-    # msg9.data = msg9_data
-    #
-    # # CAN MSG 5 - MESSAGE 10
-    # for e in range(390, 398):
-    #     msg10_data.append((CAN_bytes[e]))
-    # msg10.data = msg10_data
+      Get the new CAN bytes that just arrived
+    CAN FD MSG 1
+    for e in range(3, 67):
+        msg1_data.append((CAN_bytes[e]))
+    msg1.data = msg1_data
+    
+    # CAN FD MSG 2
+    for e in range(72, 136):
+        msg2_data.append((CAN_bytes[e]))
+    msg2.data = msg2_data
+    
+    # CAN FD MSG 3
+    for e in range(141, 205):
+        msg3_data.append((CAN_bytes[e]))
+    msg3.data = msg3_data
+    
+    # CAN FD MSG 4
+    for e in range(210, 274):
+        msg4_data.append((CAN_bytes[e]))
+    msg4.data = msg4_data
+    
+    # CAN FD MSG 5
+    for e in range(279, 343):
+        msg5_data.append((CAN_bytes[e]))
+    msg5.data = msg5_data
+    
+    # CAN MSG 1 - MESSAGE 6
+    for e in range(346, 354):
+        msg6_data.append((CAN_bytes[e]))
+    msg6.data = msg6_data
+    
+    # CAN MSG 2 - MESSAGE 7
+    for e in range(357, 365):
+        msg7_data.append((CAN_bytes[e]))
+    msg7.data = msg7_data
+    
+    # CAN MSG 3 - MESSAGE 8
+    for e in range(368, 376):
+        msg8_data.append((CAN_bytes[e]))
+    msg8.data = msg8_data
+    
+    # CAN MSG 4 - MESSAGE 9
+    for e in range(379, 387):
+        msg9_data.append((CAN_bytes[e]))
+    msg9.data = msg9_data
+    
+    # CAN MSG 5 - MESSAGE 10
+    for e in range(390, 398):
+        msg10_data.append((CAN_bytes[e]))
+    msg10.data = msg10_data
 
     time.sleep(10 / 1000)
 
