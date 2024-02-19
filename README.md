@@ -1,3 +1,3 @@
 # ECU-over-IP
 
-Sending an encrypted video frame and CAN data combined in one construct over ethernet using TCP/IP socket. 
+streaming encrypted video frames and CAN data combined in one construct over ethernet using TCP/IP socket. 
